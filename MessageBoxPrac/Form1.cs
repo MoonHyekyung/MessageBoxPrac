@@ -21,7 +21,16 @@ namespace MessageBoxPrac
         {
             MessageBox.Show("내용");
             MessageBox.Show("내용","제목");
-            MessageBox.Show("내용", "제목",MessageBoxButtons.AbortRetryIgnore); // 중단, 다시, 무시
+            MessageBox.Show("내용", "제목",
+               MessageBoxButtons.AbortRetryIgnore); // 중단, 다시, 무시
+            
+            DialogResult result;
+            do
+            {
+                result = MessageBox.Show("내용", "제목",
+                    MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Exclamation);
+                // 중단, 다시, 무시버튼 / 느낌표 아이콘
+            } while (result == DialogResult.Retry);
         }
     }
 }
